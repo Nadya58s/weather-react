@@ -7,7 +7,9 @@ import { Audio } from "react-loader-spinner";
 export default function Weather(props) {
   function handleResponse(response) {
     alert(
-      `The weather in ${response.data.name} is ${Math.round(response.data.main.temp)}°C`
+      `The weather in ${response.data.name} is ${Math.round(
+        response.data.main.temp
+      )}°C`
     );
   }
 
@@ -16,14 +18,14 @@ export default function Weather(props) {
 
   axios.get(apiUrl).then(handleResponse);
   return (
-   <Audio
-  height="80"
-  width="80"
-  radius="9"
-  color="purple"
-  ariaLabel="loading"
-  wrapperStyle
-  wrapperClass
-/>
+    <Audio
+      height="80"
+      width="80"
+      radius="9"
+      color="orange"
+      ariaLabel="loading"
+      wrapperStyle
+      wrapperClass
+    />
   );
 }
